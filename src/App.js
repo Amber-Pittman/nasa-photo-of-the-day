@@ -6,6 +6,7 @@ import "./App.css";
 function App() {
   console.log("top")
   const [data, setData] = useState({}); // Use empty object brackets to keep data type consistent
+  {/*If we don't use empty object in useState, it will set data to "undefined" */}
   
   axios.get("https://api.nasa.gov/planetary/apod?api_key=y8Ih2vW2O2XdWTf3knaCA1DOoETsWABCqkpSc9Kq&date=2019-07-28")
     .then(
@@ -29,4 +30,5 @@ function App() {
 
 export default App;
 
-{/* My personal NASA API Key: https://api.nasa.gov/planetary/apod?api_key=y8Ih2vW2O2XdWTf3knaCA1DOoETsWABCqkpSc9Kq */}
+{/* My personal NASA API Key:
+ https://api.nasa.gov/planetary/apod?api_key=y8Ih2vW2O2XdWTf3knaCA1DOoETsWABCqkpSc9Kq */}
