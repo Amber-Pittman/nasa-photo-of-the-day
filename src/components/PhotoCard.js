@@ -1,8 +1,13 @@
 import React from 'react';
 
 function PhotoCard(props) {
+    console.log(props);
     return (
-        <div>Hello</div>
+        <div>
+            <h2> {props.title} </h2>
+            <img src={props.url}></img>
+            <p> {props.explanation} </p>
+        </div>
     );
 }
 
