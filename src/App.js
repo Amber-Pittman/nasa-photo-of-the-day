@@ -4,7 +4,14 @@ import PhotoCard from "./components/PhotoCard";
 import "./App.css";
 
 function App() {
-  axios.get("https://api.nasa.gov/api.html#apod")
+  console.log("top")
+  axios.get("https://api.nasa.gov/planetary/apod?api_key=y8Ih2vW2O2XdWTf3knaCA1DOoETsWABCqkpSc9Kq&date=2019-07-28")
+    .then(
+      response => {
+        console.log(response.data);
+      }
+    );
+    console.log("bottom");
   return (
     <div className="App">
       <p>
