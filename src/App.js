@@ -29,7 +29,16 @@ function App() {
         app! Have fun 🚀!
       </p>
 
-      {<PhotoCard title={data.title} url={data.url} explanation={data.explanation} />}
+      {data && <PhotoCard title={data.title} url={data.url} explanation={data.explanation} />}
+      {/* The logical & will return the right-most value in JS if they're both true. Here it 
+        checks to see if data exists first. If data is null, false, undefined, or 0, && will
+        say that it's false and it doesn't need to check the right side.  */}
+      {/* {data 
+            ? <PhotoCard title={data.title} url={data.url} explanation={data.explanation} />}
+            : <div>Loading...</div>
+            } 
+            
+          // This is another way*/}
     </div>
   );
 }
