@@ -1,21 +1,27 @@
-import React, {useState} from "react";
+import React, {useState, useEffect } from "react";
 import axios from "axios";
 import PhotoCard from "./components/PhotoCard";
 import "./App.css";
 
 function App() {
-  console.log("top")
   const [data, setData] = useState({}); // Use empty object brackets to keep data type consistent
   {/*If we don't use empty object in useState, it will set data to "undefined" */}
+  useEffect(() => {
+    console.log("first render");
+  //   axios.get("https://api.nasa.gov/planetary/apod?api_key=y8Ih2vW2O2XdWTf3knaCA1DOoETsWABCqkpSc9Kq&date=2019-07-28")
+  //     .then(response => {
+  //         console.log(response.data);
+  //         setData(response.data); // Data object gives us access to title, url, explanation & put in <PhotoCard />
+  //     });
+        // return () => {
+        //   // do cleanup here
+        // }
+  // }, []); // Consider this array an array of dependencies
+
+  {/* useEffect takes a callback as it's first function (code we want to 
+  delay they execution on) & then takes in its 2nd argument - an array of 
+  data. We use useEffect for a set amount of time. We use it conditionally. */}
   
-  axios.get("https://api.nasa.gov/planetary/apod?api_key=y8Ih2vW2O2XdWTf3knaCA1DOoETsWABCqkpSc9Kq&date=2019-07-28")
-    .then(
-      response => {
-        console.log(response.data);
-        setData(response.data); // Data object give us access to title, url, explanation & put in <PhotoCard />
-      }
-    );
-    console.log("bottom");
   return (
     <div className="App">
       <p>
@@ -23,7 +29,7 @@ function App() {
         app! Have fun 🚀!
       </p>
 
-      <PhotoCard title={data.title} url={data.url} explanation={data.explanation} />
+      {<PhotoCard title={data.title} url={data.url} explanation={data.explanation} />}
     </div>
   );
 }
