@@ -29,16 +29,29 @@ function App() {
         app! Have fun 🚀!
       </p>
 
-      {data && <PhotoCard title={data.title} url={data.url} explanation={data.explanation} />}
-      {/* The logical & will return the right-most value in JS if they're both true. Here it 
+      {data && <PhotoCard title={data.title} url={data.url} explanation={data.explanation} date={data.date} />}
+      {/* The logical && will return the right-most value in JS if they're both true. Here it 
         checks to see if data exists first. If data is null, false, undefined, or 0, && will
-        say that it's false and it doesn't need to check the right side.  */}
+        say that it's false and it doesn't need to check the right side. It already knows that
+        if one of the 2 things is false, then the whole thing counts as false. Therefore, we 
+        never run the right half of our code.  */}
+        
       {/* {data 
             ? <PhotoCard title={data.title} url={data.url} explanation={data.explanation} />}
             : <div>Loading...</div>
             } 
             
-          // This is another way*/}
+          // This is another way
+          
+          The ternary operator is like our "if statement". If the thing before the "?" is true, 
+          then we do the thing in the 2nd part of the statement. You'll also need to include the 
+          colon and then after that will contain the "else" branch. If I don't have an else branch
+          then I can replace the ternary ("?") with &&. Something else we might want to do is
+          have the else branch be something like a div that says loading. So when the api is pulling
+          the information from NASA, it will momentarily show "Loading..." on the screen before
+          rendering the NASA data information. This is how you can get the spinners on a page while
+          you wait for the page to load (as long as you add them in.)
+          */}
     </div>
   );
 }
