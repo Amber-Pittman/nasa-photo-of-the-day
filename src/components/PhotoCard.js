@@ -10,6 +10,9 @@ const StyledH2 = styled.h2`
   margin: 1.6em;
   text-align: center;
   font-size: 4.8em;
+  background: -webkit-linear-gradient(#333, #eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const StyledImage = styled.img`
