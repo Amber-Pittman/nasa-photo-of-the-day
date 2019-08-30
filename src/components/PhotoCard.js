@@ -6,17 +6,24 @@ const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-color: ghostwhite;
+  background-color: #e6e6e6;
 `;
 
 const StyledH2 = styled.h2`
   margin: 0 0 1.2em 0;
-  padding-top: 1.2em;
+  padding-top: 0.5em;
   text-align: center;
-  font-size: 4.8em;
-  background: -webkit-linear-gradient(#8533ff, #b380ff, #f0e6ff);
+  font-size: 8vw;
+  background: -webkit-linear-gradient(#3d0099, #751aff, #f0e6ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+`;
+
+const StyledH3 = styled.h3`
+  font-size: 4vw;
+  display: flex;
+  justify-content: center;
+  color: #751aff;
 `;
 
 const StyledImage = styled.img`
@@ -24,14 +31,12 @@ const StyledImage = styled.img`
   margin-left: 20%;
   margin-right: 20%
   border-radius: 25px;
-  display: flex;
-  justify-content: center;
 `;
 
 const StyledPhotoDate = styled.p`
-  margin: 0 auto;
+  margin: 3% auto;
   font-weight: 700;
-  font-size: 2.4em;
+  font-size: 3vw;
   display: flex;
   justify-content: center;
   color: #ac00e6;
@@ -39,8 +44,7 @@ const StyledPhotoDate = styled.p`
 
 const StyledP = styled.p`
   font-size: 1.2em;
-  margin-left: 20%;
-  margin-right: 20%
+  margin: 5% 20%;
   width: 60%;
   line-height: 1.25;
 `;
@@ -52,6 +56,7 @@ function PhotoCard(props) {
             <StyledH2> {props.title} </StyledH2>
             <StyledImage src={props.url} alt="" data-pin-nopin="true"></StyledImage>
             <StyledPhotoDate>{props.date}</StyledPhotoDate>
+            <StyledH3>Tell Me More</StyledH3>
             <StyledP> {props.explanation} </StyledP>
         </StyledContainer>
     );
