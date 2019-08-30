@@ -1,7 +1,12 @@
 import React, {useState, useEffect } from "react";
 import axios from "axios";
 import PhotoCard from "./components/PhotoCard.js";
-import "./App.css";
+import styled from "styled-components";
+
+
+const AppPara = styled.p`
+  display: none;
+`;
 
 function App() {
   const [data, setData] = useState(null); {/* Use empty object brackets to keep data type consistent. If we 
@@ -17,10 +22,10 @@ function App() {
   
   return (
     <div className="App">
-      <p>
+      <AppPara>
         Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label="rocket emoji" alt="rocket emoji">🚀</span>!
-      </p>
+        app! Have fun <span role="img" aria-label="rocket" alt="blast off rocket emoji">🚀</span>!
+      </AppPara>
 
       {data ? <PhotoCard title={data.title} url={data.url} explanation={data.explanation} date={data.date} />
          : <div>Loading...</div> }
